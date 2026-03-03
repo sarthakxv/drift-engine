@@ -37,13 +37,13 @@ export default function IngestButton() {
       <button
         onClick={handleIngest}
         disabled={status === "loading"}
-        className="rounded-lg bg-accent-a px-6 py-3 text-sm font-semibold text-bg-0 transition-opacity hover:opacity-90 disabled:opacity-50"
+        className="rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-bg-0 transition-opacity hover:opacity-90 disabled:opacity-50"
       >
         {status === "loading" ? "Syncing..." : "Sync Library"}
       </button>
       {result && (
         <p
-          className={`text-sm ${status === "error" ? "text-accent-c" : "text-text-1"}`}
+          className={`text-sm ${status === "error" ? "text-red-500" : "text-text-1"}`}
         >
           {result}
         </p>

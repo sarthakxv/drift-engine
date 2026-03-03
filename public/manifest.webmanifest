@@ -4,8 +4,8 @@
   "description": "Discover music beyond your comfort zone",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0b0f12",
-  "theme_color": "#11bfae",
+  "background_color": "#121212",
+  "theme_color": "#1db954",
   "orientation": "portrait-primary",
   "icons": [
     {

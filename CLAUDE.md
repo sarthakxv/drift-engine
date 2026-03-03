@@ -36,11 +36,11 @@ Music taste discovery PWA — clusters Spotify listening data, finds exploration
 - `supabase/migrations/` — SQL schema migrations
 - `drift-product-plan.md` — full implementation plan (source of truth)
 
-## Color Tokens (Editorial Dark)
+## Color Tokens (Spotify)
 
-- `--bg-0: #0b0f12` / `--bg-1: #121820` / `--surface: #18212b`
-- `--text-0: #eef3f7` / `--text-1: #9fb0c2`
-- `--accent-a: #11bfae` / `--accent-b: #f3b846` / `--accent-c: #ff6b5a`
+- `--bg-0: #121212` / `--bg-1: #212121` / `--surface: #212121`
+- `--text-0: #b3b3b3` / `--text-1: #535353`
+- `--accent: #1db954`
 
 ## Commands
 

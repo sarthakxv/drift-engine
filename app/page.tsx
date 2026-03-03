@@ -22,7 +22,7 @@ export default async function Home() {
         </h1>
         <p className="mt-3 text-lg text-text-1">
           Connected as{" "}
-          <span className="font-semibold text-accent-a">
+          <span className="font-semibold text-accent">
             {profile?.display_name ?? profile?.spotify_user_id ?? "Unknown"}
           </span>
         </p>

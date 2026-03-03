@@ -19,7 +19,7 @@ export default function Landing() {
       <div className="mt-8">
         <a
           href="/api/auth/spotify?action=login"
-          className="rounded-lg bg-accent-a px-6 py-3 text-sm font-semibold text-bg-0 transition-opacity hover:opacity-90"
+          className="rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-bg-0 transition-opacity hover:opacity-90"
         >
           Connect Spotify
         </a>
