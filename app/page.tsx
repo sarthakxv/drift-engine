@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import Landing from "@/components/Landing";
+import IngestButton from "@/components/IngestButton";
 
 export default async function Home() {
   const supabase = await createClient();
@@ -8,7 +9,6 @@ export default async function Home() {
   } = await supabase.auth.getUser();
 
   if (user) {
-    // Authenticated — show connected state for now (Taste Map comes in Step 6)
     const { data: profile } = await supabase
       .from("users")
       .select("display_name, spotify_user_id")
@@ -26,7 +26,8 @@ export default async function Home() {
             {profile?.display_name ?? profile?.spotify_user_id ?? "Unknown"}
           </span>
         </p>
-        <div className="mt-8 flex gap-4">
+        <div className="mt-8 flex flex-col items-center gap-4">
+          <IngestButton />
           <a
             href="/api/auth/spotify?action=logout"
             className="rounded-lg border border-text-1/20 px-5 py-2.5 text-sm font-medium text-text-1 transition-colors hover:border-text-1/40"
