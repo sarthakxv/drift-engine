@@ -10,6 +10,7 @@ const envSchema = z.object({
   VAPID_PUBLIC_KEY: z.string().min(1),
   VAPID_PRIVATE_KEY: z.string().min(1),
   CRON_SHARED_SECRET: z.string().min(1),
+  LASTFM_API_KEY: z.string().min(1),
 });
 
 export type Env = z.infer<typeof envSchema>;

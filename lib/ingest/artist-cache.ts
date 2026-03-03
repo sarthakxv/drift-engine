@@ -1,5 +1,7 @@
 import { spotifyFetch } from "@/lib/spotify/client";
 import { createServiceClient } from "@/lib/supabase/service";
+import { fetchLastFmTags } from "@/lib/genres/lastfm";
+import { env } from "@/lib/env";
 
 const CACHE_MAX_AGE_DAYS = 30;
 
@@ -56,10 +58,16 @@ export async function resolveArtists(
       const res = await spotifyFetch(userId, `/artists/${artistId}`);
       const data = await res.json();
 
+      // Spotify genres are empty post-Feb 2026 — fall back to Last.fm tags
+      let genres: string[] = data.genres ?? [];
+      if (genres.length === 0) {
+        genres = await fetchLastFmTags(data.name, env.LASTFM_API_KEY);
+      }
+
       const row: ArtistRow = {
         spotify_artist_id: data.id,
         name: data.name,
-        genres: data.genres ?? [],
+        genres,
         image_url: data.images?.[0]?.url ?? null,
       };
 
